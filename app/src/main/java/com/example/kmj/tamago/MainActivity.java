@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     TextView text;
     ImageView image;
     Button button;
-    int i = 200;
+    int i = 50;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,11 +26,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //count i--;
+                i--;
                 if(i<0) {
                     Toast.makeText(getApplicationContext(), "다끝남ㅇㅇ", Toast.LENGTH_SHORT).show();
                     i = 0;
                 }
-               i--;
+                if(i==25){
+                    image.setImageResource(R.drawable.ball);
+                }
+
                text.setText(String.valueOf(i));
 
             }
@@ -39,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i=200;
+                i=50;
                 text.setText(String.valueOf(i));
                 //리셋
             }
